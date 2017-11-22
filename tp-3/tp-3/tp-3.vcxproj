@@ -115,7 +115,7 @@
     <ClCompile Include="biblio_chariot.c" />
     <ClCompile Include="biblio_machine.c" />
     <ClCompile Include="biblio_robot.c" />
-    <ClCompile Include="file.c" />
+    <ClCompile Include="fifo.c" />
     <ClCompile Include="liste.c" />
     <ClCompile Include="stack.c" />
     <ClCompile Include="simulation.c" />
@@ -123,7 +123,7 @@
   <ItemGroup>
     <ClInclude Include="biblio_chariot.h" />
     <ClInclude Include="biblio_robot.h" />
-    <ClInclude Include="file.h" />
+    <ClInclude Include="fifo.h" />
     <ClInclude Include="liste.h" />
     <ClInclude Include="model.h" />
     <ClInclude Include="stack.h" />
