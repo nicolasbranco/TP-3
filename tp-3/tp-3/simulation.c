@@ -23,6 +23,8 @@ void main()
 	//case QUEUE: test_queue(); break;
 	default:	break;
 	}
+
+	/*test_c();*/
 	
 	printf("\n\n");
 	system("pause");

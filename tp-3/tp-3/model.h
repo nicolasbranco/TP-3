@@ -35,12 +35,15 @@ typedef struct
 typedef t_book t_element;
 
 // Start the node with data next element
-typedef struct
+
+typedef struct node t_node;
+
+struct node
 {
 	t_element el;
-	struct t_node * next;
-	struct t_node * previous;
-}t_node;
+	t_node * next;
+	t_node * previous;
+};
 
 #endif // !MODELE_H
 

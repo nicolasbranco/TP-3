@@ -40,6 +40,8 @@ void push_stack(t_stack* stack, const t_element el)
 	if (top != NULL)
 	{
 		top->el = el;
+		// strcpy(top->el.authors_name, el.authors_name);
+		
 		top->next = stack->top;
 
 		stack->top = top;
