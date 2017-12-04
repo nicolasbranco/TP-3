@@ -36,7 +36,7 @@
     <ClCompile Include="simulation.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="fifo.c">
+    <ClCompile Include="queue.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,7 +59,7 @@
     <ClInclude Include="simulation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="fifo.h">
+    <ClInclude Include="queue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

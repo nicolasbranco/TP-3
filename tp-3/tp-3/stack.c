@@ -4,7 +4,15 @@ Cette module possibilite l’utilisation de pile dynamiques de livres.
 
 #include <stdio.h>
 #include "model.h"
-#include "stack.h"
+#include"simulation.h"
+
+
+#define STACK_EMPTY 0
+
+#define TRUE	1
+#define FALSE	0
+
+// max length - 10 000
 
 // initialize stack
 void init_stack(t_stack* stack) 
@@ -29,11 +37,16 @@ void push_stack(t_stack* stack, const t_element el)
 
 	top = (t_node*)malloc(sizeof(t_node));
 
-	top->el = el;
-	top->next = stack->top;
+	if (top != NULL)
+	{
+		top->el = el;
+		top->next = stack->top;
 
-	stack->top = top;
-	stack->num_el++;
+		stack->top = top;
+		stack->num_el++;
+	}
+	else
+		printf("Error in allocating memory.\n");
 }
 
 
