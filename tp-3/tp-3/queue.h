@@ -1,5 +1,5 @@
 /*
-This module has the definitions for FIFO
+This module has the definitions for QUEUE
 */
 
 #ifndef T_QUEUE_H 
@@ -25,4 +25,4 @@ t_element pop_queue(t_queue*);
 void push_queue(t_queue *, t_element);
 
 
-#endif // !T_PILE_H
+#endif // !T_QUEUE_H

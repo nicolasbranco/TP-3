@@ -43,7 +43,7 @@ t_element pop_queue(t_queue * queue)
 		el = aux->el;
 		
 		queue->first = queue->first->next;
-		if (queue->num_el != 1)
+		if (queue->num_el != 1) // otherwise it will have error reading previous el
 			queue->first->previous = NULL;
 		queue->num_el--;
 

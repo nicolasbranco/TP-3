@@ -9,9 +9,9 @@ This part of the program is going to simuler les modules of the function
 
 // Choose in function of what is being tested
 
-enum simulation_options {STACK, QUEUE};
+enum simulation_options {STACK, QUEUE, LINE};
 
-#define SIMULATION QUEUE;
+#define SIMULATION LINE;
 
 void main() 
 {
@@ -21,6 +21,7 @@ void main()
 	{
 	case STACK: test_stack(); break;
 	case QUEUE: test_queue(); break;
+	case LINE: test_list(); break;
 	default:	break;
 	}
 
@@ -30,21 +31,6 @@ void main()
 	system("pause");
 }
 
-
-////simule a book
-//t_book simulate_book()
-//{
-//	t_book book1;
-//	book1.genre = FICTION;
-//	strcpy(book1.title, "Les Ninjas de l'Info 2");
-//	strcpy(book1.authors_name, "Yannick");
-//	strcpy(book1.authors_surname, "Roy");
-//	book1.num_pg = 252;
-//	book1.isbn = 369;
-//	book1.bBorrowed = AVAIABLE;
-//
-//	return book1;
-//}
 
 t_book simulate_book()
 {
@@ -60,7 +46,6 @@ t_book simulate_book()
 	
 	return book;
 }
-
 
 
 //This part is for testing the queue
@@ -105,6 +90,31 @@ void test_stack()
 	pop_stack(&stack);
 
 	pop_stack(&stack);
+}
+
+
+// testing list
+void test_list()
+{
+	t_list list;
+	t_book book;
+
+	book = simulate_book();
+
+	init_list(&list);
+
+	push_list_start(&list, book);
+
+	push_list_start(&list, book);
+
+	push_list_end(&list, book);
+
+	pop_list_start(&list);
+
+	pop_list_end(&list);
+
+	pop_list_start(&list);
+
 }
 
 
