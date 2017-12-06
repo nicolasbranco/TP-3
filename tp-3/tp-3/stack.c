@@ -3,8 +3,10 @@ Cette module possibilite l’utilisation de pile dynamiques de livres.
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "model.h"
 #include "stack.h"
+
 
 // initialize stack
 void init_stack(t_stack* stack) 
