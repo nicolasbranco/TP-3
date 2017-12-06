@@ -41,9 +41,14 @@ t_element pop_queue(t_queue * queue)
 	{
 		aux = queue->first;
 		el = aux->el;
-
+		
 		queue->first = queue->first->next;
+		if (queue->num_el != 1)
+			queue->first->previous = NULL;
 		queue->num_el--;
+
+		if (queue_empty(queue)) // avoids trash
+			queue->last = NULL;
 
 		free(aux);
 
@@ -52,29 +57,37 @@ t_element pop_queue(t_queue * queue)
 }
 
 //add element
-//void push_queue(t_queue * queue, t_element el)
-//{
-//	t_node * new_el;
-//
-//	new_el = (t_node*)malloc(sizeof(t_node));
-//
-//	if (new_el != NULL)
-//	{
-//		new_el->el = el;
-//
-//		new_el->previous = queue->last;
-//		new_el->next = queue->last->next;
-//
-//		new_el->previous->next = new_el;
-//		queue->last = new_el;
-//
-//		if (queue_empty(queue))
-//			queue->first = queue->last;
-//		queue->num_el++;
-//	}
-//	else
-//		printf("\nError in creating new node.\n");
-//
-//}
+void push_queue(t_queue * queue, t_element el)
+{
+	t_node * new_el;
+
+	new_el = (t_node*)malloc(sizeof(t_node));
+
+	if (new_el == NULL)
+		printf("\nError in creating new node.\n");
+		
+	else
+	{
+		new_el->el = el;
+		
+		if (queue_empty(queue)) // avoids reading violation
+		{
+			new_el->next = NULL;
+			new_el->previous = NULL;
+
+			queue->first = new_el;
+			queue->last = new_el;
+		}
+		else
+		{
+			new_el->previous = queue->last;
+			new_el->next = queue->last->next;
+
+			new_el->previous->next = new_el;
+			queue->last = new_el;
+		}
+		queue->num_el++;
+	}
+}
 
 

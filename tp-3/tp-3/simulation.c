@@ -11,7 +11,7 @@ This part of the program is going to simuler les modules of the function
 
 enum simulation_options {STACK, QUEUE};
 
-#define SIMULATION STACK;
+#define SIMULATION QUEUE;
 
 void main() 
 {
@@ -20,7 +20,7 @@ void main()
 	switch (choice)
 	{
 	case STACK: test_stack(); break;
-	//case QUEUE: test_queue(); break;
+	case QUEUE: test_queue(); break;
 	default:	break;
 	}
 
@@ -51,10 +51,6 @@ t_book simulate_book()
 	t_book book;
 
 	book.genre = HISTORY;
-	
-	//book.title = "Title test\0";
-	//book.title = "Author's name test\0";
-	//book.title = "Author's surname test\0";
 	strcpy(book.title, "Title test");
 	strcpy(book.authors_name, "Author's name test");
 	strcpy(book.authors_surname, "Author's surname test");
@@ -68,28 +64,26 @@ t_book simulate_book()
 
 
 //This part is for testing the queue
-//void test_queue()
-//{
-//	t_queue queue;
-//
-//	t_element book;
-//
-//	book = simulate_book();
-//	//book = simuler_book();
-//
-//	init_queue(&queue);
-//
-//	push_queue(&queue, book);
-//
-//	push_queue(&queue, book);
-//
-//	pop_queue(&queue);
-//
-//	pop_queue(&queue);
-//
-//}
+void test_queue()
+{
+	t_queue queue;
 
+	t_element book;
 
+	book = simulate_book();
+	//book = simuler_book();
+
+	init_queue(&queue);
+
+	push_queue(&queue, book);
+
+	push_queue(&queue, book);
+
+	pop_queue(&queue);
+
+	pop_queue(&queue);
+
+}
 
 
 //This part is for testing the stack

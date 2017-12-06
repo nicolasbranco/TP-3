@@ -13,6 +13,7 @@
 #define AVAIABLE 0
 #define BORROWED 1	
 
+#include <stdlib.h>
 
 typedef enum {
 	INVALID = -1, NONE = 0, FICTION = 1, HISTORY = 2,

@@ -22,7 +22,7 @@ int queue_empty(t_queue*);
 t_element pop_queue(t_queue*);
 
 //add element
-//void push_queue(t_queue *, t_element);
+void push_queue(t_queue *, t_element);
 
 
 #endif // !T_PILE_H
