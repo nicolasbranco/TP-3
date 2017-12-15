@@ -6,6 +6,8 @@
 #ifndef T_STACK_H
 #define T_STACK_H
 
+
+
 typedef struct 
 {
 	int num_el;
